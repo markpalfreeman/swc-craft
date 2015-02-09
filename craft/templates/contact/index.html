@@ -1,0 +1,35 @@
+{% extends "_layout" %}
+{% set title = "Contact" %}
+
+{% block content %}
+  {% for entry in craft.entries.section('contact').find() %}
+    <article>
+
+      <h2>Questions?</h2>
+      <p>Email us anything and we'll do our best to reply quickly:</p>
+
+      <form>
+        <label for="contact-firstName">First name</label>
+        <input type="text" id="contact-firstName">
+
+        <label for="contact-lastName">Last name</label>
+        <input type="text" id="contact-lastName">
+
+        <label for="contact-fromEmail">From:</label>
+        <input type="email" id="contact-fromEmail">
+
+        <label for="contact-emailSubject">Subject</label>
+        <input type="text" id="contact-emailSubject">
+
+        <label for="contact-emailBody">Message</label>
+        <textarea type="text" id="contact-emailBody" rows="3" placeholder="What's up?"></textarea>
+
+        <button type="submit">Submit</button>
+
+      </form>
+
+      {% include "_partials/_sidebar.html" %}
+
+    </article>
+  {% endfor %}
+{% endblock %}

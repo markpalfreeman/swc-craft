@@ -20,14 +20,48 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
 
-	{{ entry.body }}
+  <section class="">
+    <h1>Together, whiskey tastes better.</h1>
+    <div>
+      <p>We like whiskey.</p>
+      <p>But until shared with others, whiskey is just a drink—granted, a good one.</p>
+      <p>Every month, we meet together to explore and taste bourbon and rye whiskeys.</p>
+      <p>If you’re a whiskey fan, we’ve built a community for people like you.</p>
+    </div>
+  </section>
 
+  <section class="">
+    <h1>Together, we can do more.</h1>
+    <div>
+      <p>In Seattle, $15 barely buys you a well-crafted cocktail at a local bar.</p>
+      <p>Here it'll get you learning materials, an instant community, and 3–4 complimentary whiskey tastings per month. (Don't worry, we like bars, too.)</p>
+      <p>That's pretty good for $180 a year.</p>
+    </div>
+  </section>
+
+  <section class="">
+    <h1>Together, we are the Seattle Whiskey Collective.</h1>
+    <div>
+      <p>To sign up for membership or receive future event invitations, join our email list:</p>
+
+      {% include "_partials/_mc-form.html" %}
+
+      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='TEXTYUI_3';ftypes[3]='text';fnames[4]='TEXT1';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+      <!--End mc_embed_signup-->
+
+
+    </div>
+  </section>
+
+  {# Should I be checking for the Homepage entry instead, and filling in the {{entry.body}}? #}
+
+
+{#
 	<h2>Recent News</h2>
 	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
+		{% for entry in craft.entries.section('blog').limit(5).find() %}
 			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
 		{% endfor %}
-	</ul>
+	</ul> #}
 {% endblock %}
